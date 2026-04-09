@@ -1,0 +1,37 @@
+---
+description: >-
+  Holding pattern for /docs during iteration; wrap-up trigger, anti-drift check,
+  mandatory doc sync, and final status report format.
+alwaysApply: true
+---
+# Definition of Done & Wrap-Up Protocol
+
+## The Holding Pattern
+During active development, debugging, or iterative back-and-forth with the user, DO NOT update the `/docs/` folder. Keep a mental note of any deviations from the original spec, but wait for the explicit Execution Trigger before modifying documentation.
+
+**Exception:** When the user’s task is explicitly to author or revise documentation, or when you are following the **Documentation readiness** flow in `01-system-instructions.mdc` (stub or missing `/docs` → collaborate in Plan mode, then write agreed content to `/docs/`), updating `/docs/` is allowed without the wrap-up trigger.
+
+## The Execution Trigger
+You must ONLY execute the following Wrap-Up Protocol when the user explicitly signals that the feature or task is finished. Look for phrases like:
+- "Good to go"
+- "Wrap it up"
+- "Feature complete"
+- "We're done here"
+
+## Wrap-Up Protocol (Execute ONLY after the trigger)
+
+### 1. The Anti-Drift Check
+- Review the final state of the code you just wrote.
+- Compare it against the original specifications in the local `/docs/features/{feature-name}/` folder and the global `/docs/` folder.
+- Identify deviations: Did we use a different API route? Did we change a data model? Did we bypass a planned step?
+
+### 2. Mandatory Documentation Updates
+- **Update the Source of Truth:** If there are ANY deviations between the final code and the docs, update the relevant markdown files in the `/docs` directory so they accurately reflect the living codebase.
+- **No Edit Logs:** DO NOT maintain a running list of line-by-line edits. Rely on Git for version history. Only update the "current state" in the spec files.
+- **Architectural Decisions (ADRs):** If a major technical pivot occurred, add a brief, timestamped entry to `/docs/decisions.md` explaining *why* the change was made.
+
+### 3. Final Output Format
+Your final response after executing this protocol must include a status report using exactly this format:
+
+**Task Status:** Complete & Wrapped.
+**Docs Updated:** [List the exact markdown files modified, e.g., `/docs/features/user-auth/feature-spec.md`] OR [Verified: No doc updates required].

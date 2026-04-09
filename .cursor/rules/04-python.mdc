@@ -1,0 +1,53 @@
+---
+description: Python coding standards (docstrings, typing, style — extend as needed)
+globs: "**/*.py"
+alwaysApply: false
+---
+# Python
+
+This file is the **single place for Python-specific agent rules** for this project. Add new `##` sections below as conventions grow (e.g. typing, tests, packaging). Match the existing codebase when in doubt.
+
+---
+
+## Docstrings (NumPy format)
+
+When adding or editing docstrings, use the **NumPy docstring convention** (numpydoc), not Google style.
+
+### Rules
+
+- **Summary line:** First line is a single imperative or descriptive line (e.g. `Compute the mean along an axis.`).
+- **Sections:** Use underlined headers exactly as in numpydoc — `Parameters`, `Returns`, `Yields`, `Raises`, `Notes`, `Examples`, etc. Only include sections that apply.
+- **Parameters / attributes / other parameters:** Name, type (after `:`), then indented description on the following lines.
+- **Returns / Yields:** Type on one line, then indented description if needed.
+- **Private helpers:** Still document non-trivial behavior; use the same format. Trivial one-liners may be a single summary line only.
+- **Do not** use Google-style (`Args:`, `Returns:` blocks) or epytext unless the file already uses that style consistently (then match the file).
+
+### Minimal example
+
+```python
+def clamp(value: float, low: float, high: float) -> float:
+    """
+    Constrain a value to a closed interval.
+
+    Parameters
+    ----------
+    value : float
+        Input to clamp.
+    low : float
+        Lower bound (inclusive).
+    high : float
+        Upper bound (inclusive).
+
+    Returns
+    -------
+    float
+        `value` limited to ``[low, high]``.
+
+    Raises
+    ------
+    ValueError
+        If ``low > high``.
+    """
+```
+
+Reference: https://numpydoc.readthedocs.io/en/latest/format.html

@@ -1,0 +1,29 @@
+---
+description: >-
+  How to author /docs/architecture.md: flexible depth, honest repo map,
+  no invented paths.
+globs: "**/docs/architecture.md"
+alwaysApply: false
+---
+# Authoring `/docs/architecture.md`
+
+## Purpose
+
+Summarize **system shape and intent** for this repo. It complements—not replaces—browsing the tree. Depth should match the project: a script may need one section; a platform may need several.
+
+## Structure
+
+- **No fixed outline.** The template suggests topics; add, rename, or skip `##` sections so the doc fits the project.
+- **Prefer at least a short Summary** so agents have a place to anchor context; beyond that, only what adds clarity.
+- **Content is per-project** and should stay accurate when the system changes (including wrap-up / doc sync in project rules).
+
+## Repository layout
+
+When you include paths or a layout map:
+
+- Base them on **actual** directories/files (or user agreement in Plan mode). **Never invent** folders to look tidy.
+- Keep it **shallow**—enough to find the right area, not a full inventory.
+
+## Stubs vs done
+
+If **Summary** is empty or still generic placeholders and the task needs architectural facts, treat the doc as **bootstrap-incomplete** alongside other `/docs` (see **Documentation readiness** in `01-system-instructions.mdc`).
