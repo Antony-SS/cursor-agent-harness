@@ -16,8 +16,10 @@ A **cloneable starter** for coding projects where **agents and humans share the 
   03-docs-architecture.mdc     # How to write docs/architecture.md (globs that file)
   04-python.mdc               # Python conventions (globs *.py)
 
+scratch/                # Optional working notes (session context, backlog—not canonical)
+  README.md             # What belongs here vs /docs
+
 docs/                   # Canonical doc tree (paths stay stable across clones)
-  agent-harness.md        # This file — human guide (safe to merge into existing repos)
   spec.md                 # Product scope and requirements
   architecture.md         # How the system/repo is shaped (flexible depth)
   tech_stack.md           # Languages, deps, versions
@@ -39,7 +41,7 @@ docs/                   # Canonical doc tree (paths stay stable across clones)
 
 Your project’s root **`README.md` should stay yours.** This guide lives here so you can merge **only** what you need:
 
-- Copy or merge **`.cursor/rules/`** and the **`docs/`** files (including this one).
+- Copy or merge **`.cursor/rules/`**, **`docs/`**, and optionally **`scratch/`** (see `scratch/README.md`).
 - **Do not** copy the harness repo’s root `README.md` into the project root, or you will overwrite the project readme. The harness keeps a tiny root `README.md` so **GitHub** can show an entry point; full narrative is in this file.
 
 Resolve conflicts if you already have files under `docs/` or `.cursor/rules/` (merge by hand or rename feature example folder).
@@ -53,7 +55,7 @@ Git cannot “skip” a tracked file during `git clone`—the object is still fe
    ```bash
    git clone --filter=blob:none --sparse <url-for-this-repo>
    cd cursor-agent-harness
-   git sparse-checkout set --cone .cursor docs
+   git sparse-checkout set --cone .cursor docs scratch
    ```
 
    Your tree has `.cursor/` and `docs/` only; root `README.md` is not checked out. Add paths later with `git sparse-checkout add <path>` if needed.

@@ -9,6 +9,8 @@ alwaysApply: true
 ## The Holding Pattern
 During active development, debugging, or iterative back-and-forth with the user, DO NOT update the `/docs/` folder. Keep a mental note of any deviations from the original spec, but wait for the explicit Execution Trigger before modifying documentation.
 
+**`/scratch/` vs the holding pattern:** Deferring `/docs/` updates does **not** block `/scratch/` work—but **only** when the user **explicitly** asked you to record something under `/scratch/` (same rule as in `01-system-instructions.mdc`). Do **not** fill scratch on your own. When the user does ask, keep entries **concise**. Anything that should be official still belongs in `/docs` at wrap-up.
+
 **Exception:** When the user’s task is explicitly to author or revise documentation, or when you are following the **Documentation readiness** flow in `01-system-instructions.mdc` (stub or missing `/docs` → collaborate in Plan mode, then write agreed content to `/docs/`), updating `/docs/` is allowed without the wrap-up trigger.
 
 ## The Execution Trigger
@@ -27,6 +29,7 @@ You must ONLY execute the following Wrap-Up Protocol when the user explicitly si
 
 ### 2. Mandatory Documentation Updates
 - **Update the Source of Truth:** If there are ANY deviations between the final code and the docs, update the relevant markdown files in the `/docs` directory so they accurately reflect the living codebase.
+- **Scratch → docs (if used):** If `/scratch/` contains decisions or facts that should be binding, fold them into the appropriate `/docs` files (or `/docs/decisions.md` for pivots), then trim or archive scratch notes as the user prefers.
 - **No Edit Logs:** DO NOT maintain a running list of line-by-line edits. Rely on Git for version history. Only update the "current state" in the spec files.
 - **Architectural Decisions (ADRs):** If a major technical pivot occurred, add a brief, timestamped entry to `/docs/decisions.md` explaining *why* the change was made.
 

@@ -25,6 +25,11 @@ Whenever you are initialized or asked to perform a task, use the following routi
    - Read the local `feature-spec.md` and `implementation-plan.md` before making changes.
 3. **Historical Decisions:**
    - If you encounter code that seems counterintuitive, check `/docs/decisions.md` (ADRs) to understand the historical context before refactoring it.
+4. **Working notes (`/scratch/`):**
+   - Optional. For informal **session context** when the user wants it persisted: conversation summaries, tentative decisions, backlog ideas, follow-ups. **Not** a source of truth—treat `/docs` as canonical for specs and architecture.
+   - **Do not** create, append to, or populate files under `/scratch/` unless the user **explicitly** asks you to save chat or discussion context there. Avoid proactive or verbose scratch dumps; keep replies in the thread unless instructed otherwise.
+   - If the user (or prior work) left files in `/scratch/`, skim what’s relevant when picking up a thread so intent carries forward.
+   - Promote agreed outcomes into `/docs` when they should bind future work (e.g. during the wrap-up protocol in `02-definition-of-done.mdc`).
 
 ## Documentation readiness (greenfield and stubs)
 - Before implementing non-trivial behavior, verify the relevant files under `/docs/` (global + active feature folder) contain **enough concrete detail** to build without inventing product or technical facts. Treat as insufficient when files are empty, placeholder-only, or missing sections needed for the task (goals, constraints, interfaces, data, acceptance criteria).
